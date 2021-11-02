@@ -1,6 +1,9 @@
 package main
 
 import (
+	"math/rand"
+	"time"
+
 	"go.dedis.ch/kyber/v3"
 	"go.dedis.ch/kyber/v3/pairing"
 	"go.dedis.ch/kyber/v3/share"
@@ -41,4 +44,14 @@ func setupThresholdServers(parameters publicParameters, secret kyber.Scalar) ([]
 	}
 
 	return serverList, pubPoly1, pubPoly2
+}
+
+func chooseTofNservers(parameters publicParameters, servers []*server) []*server {
+	rand.Seed(time.Now().Unix())
+	shuffled := make([]*server, len(servers))
+
+	copy(shuffled, servers)
+	rand.Shuffle(len(shuffled), func(i, j int) { shuffled[i], shuffled[j] = shuffled[j], shuffled[i] })
+
+	return shuffled[:parameters.Threshold]
 }

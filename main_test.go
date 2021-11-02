@@ -38,7 +38,7 @@ func TestSharedKeyDerivationLocal(t *testing.T) {
 	family := []*user{arke, electra, thaumas}
 
 	for _, u := range users {
-		u.requestContrainingKeys(parameters, serverList)
+		u.requestContrainingKeys(parameters, chooseTofNservers(parameters, serverList))
 		u.computeSharedKeys(parameters)
 	}
 
@@ -79,7 +79,7 @@ func TestConstrainingKeys(t *testing.T) {
 	u1 := newUser(parameters, "nmohnblatt", []string{"mom", "dad"})
 
 	// Obtain constraining keys from t servers
-	u1.requestContrainingKeys(parameters, serverList[:parameters.Threshold])
+	u1.requestContrainingKeys(parameters, chooseTofNservers(parameters, serverList))
 
 	// Compute the expected values for Alice's private keys
 	want1 := parameters.Suite.G1().Point().Mul(masterSecret, u1.publicKeys.Left)

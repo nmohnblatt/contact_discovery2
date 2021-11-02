@@ -39,7 +39,7 @@ func main() {
 	users := []*user{electra, thaumas}
 
 	for _, u := range users {
-		u.requestContrainingKeys(parameters, serverList)
+		u.requestContrainingKeys(parameters, chooseTofNservers(parameters, serverList))
 		u.computeSharedKeys(parameters)
 		for _, contact := range u.contacts {
 			u.insecureMeet(contact, onlineCache)
@@ -60,7 +60,7 @@ func main() {
 	externalUser := newUser(parameters, identifier, contacts)
 	fmt.Printf("\nWelcome %s!\n\n", externalUser.DiscoveryIdentifier)
 
-	externalUser.requestContrainingKeys(parameters, serverList)
+	externalUser.requestContrainingKeys(parameters, chooseTofNservers(parameters, serverList))
 	fmt.Printf("Successfully fetched your constraining keys from %d out of %d servers\n", parameters.Threshold, parameters.TotalServers)
 
 	externalUser.computeSharedKeys(parameters)
