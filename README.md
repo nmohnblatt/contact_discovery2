@@ -8,7 +8,7 @@ As is written in the code, I present:
 ## System Requirements
 Application has only been tested on Linux. Requires [Go](https://golang.org) v1.14 or later.
 
-This PoC is built on top of the [dedis/kyber](https://github.com/dedis/kyber) library.
+This PoC is built on top of the [dedis/kyber](https://github.com/dedis/kyber) library. Note however that this library only allows BLS signatures where messages are points on G1. In the case of our contact discovery scheme, we need to perform BLS signatures in both groups of our asymmetric pairing. The package `crypto` written as part of the original project implements the missing functionality.
 
 ## Current Functionnality
 1. `n` servers are initialised, of which at least `t` are assumed to be honest 
