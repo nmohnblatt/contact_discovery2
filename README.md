@@ -26,8 +26,8 @@ This PoC is built on top of the [dedis/kyber](https://github.com/dedis/kyber) li
 ## Running the application
 
 There are two ways to run this applications:
-- run tests to verify that it works
-- run the binary to play aorund. As mentioned above, some users are initialised and are expecting a specific user.
+- run tests to verify that it works (`go test`)
+- run the binary to play around inputting different users and contacts. As mentioned above, some users are initialised and are expecting a relative to join the service!
 
 To download and run the source code:
 ```
