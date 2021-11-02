@@ -29,19 +29,10 @@ There are two ways to run this applications:
 - run tests to verify that it works
 - run the binary to play aorund. As mentioned above, some users are initialised and are expecting a specific user.
 
-In a new terminal window, clone the repository into your `GOPATH/src` directory and install the application. In this example, `GOPATH` is set to the default value `$HOME/go`:
-
-    $ cd $HOME/go/src
-    $ git clone https://github.com/nmohnblatt/contact_discovery2.git
-    $ go install github.com/nmohnblatt/contact_discovery2
-
-NOTE: you can check the value of GOPATH by running the command `go env GOPATH`
-
-Run the application by simply typing:
-
-    $ contact_discovery2
-
-Alternatively, you can navigate to your `GOPATH/bin` directory and run the application. Again in this example `GOPATH` os set to the default value `$HOME/go`:
-
-    $ cd $HOME/go/bin
-    $ ./cd_client
+To download and run the source code:
+```
+$ go get github.com/nmohnblatt/contact_discovery2
+$ cd /go/src/github.com/nmohnblatt/
+$ go build
+$ ./contact_discovery2
+```
