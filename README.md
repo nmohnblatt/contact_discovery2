@@ -16,7 +16,7 @@ This PoC is built on top of the [dedis/kyber](https://github.com/dedis/kyber) li
 3. the user's identifier is blinded and sent to `t` servers to obtain **constraining keys** (blind threshold BLS signature)
 4. the constraining keys are used to derive unique key material for each contact (left-right constrained PRFs)
 5. steps 2-4 are repeated for each user
-6. users make sue of the derived key material to establish a meeting point on an "online" cache
+6. users make use of the derived key material to establish a meeting point on an "online" cache
 
 ## TODO
 - prevent impersonation: currently users can claim any identifier they want, even if it does not belong to them. In the ARKE construction, a mechanism is designed to avoid this (see [write-up](https://github.com/nmohnblatt/ucl_dissertation))
