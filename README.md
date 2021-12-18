@@ -26,13 +26,13 @@ This PoC is built on top of the [dedis/kyber](https://github.com/dedis/kyber) li
 ## Running the application
 
 There are two ways to run this applications:
-- run tests to verify that it works (`go test`)
+- run tests to verify that it works (run `$ go test` in the `contact_discovery2` directory)
 - run the binary to play around inputting different users and contacts. As mentioned above, some users are initialised and are expecting a relative to join the service!
 
 To download and run the source code:
 ```
 $ go get github.com/nmohnblatt/contact_discovery2
-$ cd /go/src/github.com/nmohnblatt/
+$ cd /go/src/github.com/nmohnblatt/contact_discovery2
 $ go build
 $ ./contact_discovery2
 ```
